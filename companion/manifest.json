@@ -1,16 +1,16 @@
 {
-	"id": "your-module-name",
-	"name": "your-module-name",
-	"shortname": "module-shortname",
-	"description": "A short one line description of your module",
+	"id": "slmn-basketball-data",
+	"name": "slmn-basketball-data",
+	"shortname": "slmn-basketball-data",
+	"description": "Data for Person",
 	"version": "0.0.0",
 	"license": "MIT",
 	"repository": "git+https://github.com/bitfocus/companion-module-your-module-name.git",
 	"bugs": "https://github.com/bitfocus/companion-module-your-module-name/issues",
 	"maintainers": [
 		{
-			"name": "Your name",
-			"email": "Your email"
+			"name": "SLMN",
+			"email": "slmn+companion@slmn.io"
 		}
 	],
 	"runtime": {
@@ -20,7 +20,7 @@
 		"entrypoint": "../dist/main.js"
 	},
 	"legacyIds": [],
-	"manufacturer": "Your company",
-	"products": ["Your product"],
+	"manufacturer": "SLMN",
+	"products": ["Basketball Data"],
 	"keywords": []
 }
