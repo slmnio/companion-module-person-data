@@ -1,6 +1,6 @@
 {
-	"name": "your-module-name",
-	"version": "0.1.0",
+	"name": "companion-module-person-data",
+	"version": "1.0.2",
 	"main": "dist/main.js",
 	"type": "module",
 	"scripts": {
@@ -43,5 +43,6 @@
 		"*.{ts,tsx,js,jsx}": [
 			"yarn lint:raw --fix"
 		]
-	}
+	},
+	"packageManager": "pnpm@9.13.2"
 }
