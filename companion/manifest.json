@@ -1,7 +1,7 @@
 {
-	"id": "slmn-basketball-data",
-	"name": "slmn-basketball-data",
-	"shortname": "slmn-basketball-data",
+	"id": "companion-module-person-data",
+	"name": "companion-module-person-data",
+	"shortname": "companion-module-person-data",
 	"description": "Data for Person",
 	"version": "0.0.0",
 	"license": "MIT",

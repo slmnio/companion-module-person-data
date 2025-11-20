@@ -30,17 +30,17 @@ jobs:
         if: ${{ contains(github.repository, 'companion-module-template-') }}
         run: |
           # Perform an install to generate the lockfile
-          yarn install
+          pnpm install
         env:
           CI: false
       - name: Prepare module
         run: |
-          yarn install
+          pnpm install
         env:
           CI: true
       - name: Build and check types
         run: |
-          yarn build
+          pnpm build
         env:
           CI: true
       - name: Run lint
@@ -64,12 +64,12 @@ jobs:
   #     - name: Prepare Environment
   #       run: |
   #         corepack enable
-  #         yarn install
+  #         pnpm install
   #       env:
   #         CI: true
   #     - name: Run tests
   #       run: |
-  #         yarn test
+  #         pnpm test
   #       env:
   #         CI: true
   #     - name: Send coverage
