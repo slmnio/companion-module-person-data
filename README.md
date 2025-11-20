@@ -1,4 +1,4 @@
-# companion-module-[replace with module name]
+# companion-module-slmn-erson-data
 
 See [HELP.md](./companion/HELP.md) and [LICENSE](./LICENSE)
 
