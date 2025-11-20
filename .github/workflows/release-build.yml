@@ -41,7 +41,7 @@ jobs:
       - name: Upload artifact to release
         uses: softprops/action-gh-release@v2
         with:
-          files: ./slmn-person-data-${{ steps.get_version.outputs.version }}.tgz
+          files: ./companion-module-person-data-${{ steps.get_version.outputs.version }}.tgz
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
