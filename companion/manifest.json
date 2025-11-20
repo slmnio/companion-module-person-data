@@ -5,8 +5,8 @@
 	"description": "Data for Person",
 	"version": "0.0.0",
 	"license": "MIT",
-	"repository": "git+https://github.com/bitfocus/companion-module-your-module-name.git",
-	"bugs": "https://github.com/bitfocus/companion-module-your-module-name/issues",
+	"repository": "git+https://github.com/bitfocus/companion-module-person-data.git",
+	"bugs": "https://github.com/bitfocus/companion-module-person-data/issues",
 	"maintainers": [
 		{
 			"name": "SLMN",

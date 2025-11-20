@@ -1,22 +1,22 @@
 {
 	"name": "companion-module-person-data",
-	"version": "1.0.3",
+	"version": "1.0.8",
 	"main": "dist/main.js",
 	"type": "module",
 	"scripts": {
 		"postinstall": "husky",
 		"format": "prettier -w .",
-		"package": "run build && companion-module-build",
-		"build": "rimraf dist && run build:main",
+		"package": "pnpm run build && companion-module-build",
+		"build": "rimraf dist && pnpm run build:main",
 		"build:main": "tsc -p tsconfig.build.json",
 		"dev": "tsc -p tsconfig.build.json --watch",
 		"lint:raw": "eslint",
-		"lint": "run lint:raw ."
+		"lint": "pnpm run lint:raw ."
 	},
 	"license": "MIT",
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/bitfocus/companion-module-your-module-name.git"
+		"url": "git+https://github.com/slmnio/companion-module-person-data.git"
 	},
 	"engines": {
 		"node": "^22.14"
@@ -41,7 +41,7 @@
 			"prettier --write"
 		],
 		"*.{ts,tsx,js,jsx}": [
-			"yarn lint:raw --fix"
+			"pnpm lint:raw --fix"
 		]
 	},
 	"packageManager": "pnpm@9.13.2"

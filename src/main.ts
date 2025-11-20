@@ -13,6 +13,8 @@ import { fileURLToPath } from 'url'
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
 
+const hardcodedDirectory = 'C:\\Users\\colin\\basketball stats'
+
 export class ModuleInstance extends InstanceBase<ModuleConfig> {
 	config!: ModuleConfig // Setup in init()
 	loadInterval: any
@@ -23,7 +25,7 @@ export class ModuleInstance extends InstanceBase<ModuleConfig> {
 
 	async init(config: ModuleConfig): Promise<void> {
 		this.log('debug', JSON.stringify(config))
-		if (!config.hash || !config.event || config.url) {
+		if ((!config.hash || !config.event) && config.url) {
 			const manualCheck = await this.getSiteMetadata(config.url)
 			this.log('debug', JSON.stringify(config.url))
 			this.log('debug', JSON.stringify(manualCheck))
@@ -109,7 +111,7 @@ export class ModuleInstance extends InstanceBase<ModuleConfig> {
 		const data = await getGameData(eventId, eventHashCode)
 		const variableData = getVariables(data)
 
-		await checkDataFolderExists(path.join(__dirname, 'data'))
+		await checkDataFolderExists(path.join(hardcodedDirectory || __dirname, 'data'))
 
 		await Promise.all(
 			Object.entries(variableData)
@@ -133,7 +135,7 @@ export class ModuleInstance extends InstanceBase<ModuleConfig> {
 
 						try {
 							await fs.writeFile(
-								path.join(__dirname, 'data', filename),
+								path.join(hardcodedDirectory || __dirname, 'data', filename),
 								fileType === 'json' ? JSON.stringify(data) : data,
 								{
 									encoding: 'utf-8',

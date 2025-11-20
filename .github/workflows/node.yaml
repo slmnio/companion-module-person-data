@@ -45,7 +45,7 @@ jobs:
           CI: true
       - name: Run lint
         run: |
-          yarn lint
+          pnpm lint
         env:
           CI: true
 
