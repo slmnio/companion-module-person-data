@@ -4,6 +4,8 @@ import * as fs from 'node:fs/promises'
 
 const USE_CSV_HEADERS = true
 
+const hardcodedDirectory = 'C:\\Users\\colin\\basketball stats\\images'
+
 export async function getGameData(eventId: string, eventHashCode: string): Promise<Root> {
 	const data = (await fetch(
 		`https://njcaastats.prestosports.com/action/sports/liveupdate?e=${eventId}&h=${eventHashCode}`,
@@ -65,6 +67,7 @@ export function getVariables(data: Root): { [k: string]: string } {
 				const p: { [k: string]: any } = {}
 
 				p[`name`] = player.name
+				p[`firstname`] = player.checkname?.split(',').pop()
 				p[`lastname`] = player.checkname?.split(',').shift()
 				p[`uniform`] = player.uni
 				p[`team`] = team.id
@@ -81,6 +84,8 @@ export function getVariables(data: Root): { [k: string]: string } {
 				p[`r`] = player.stats?.treb || 0
 				p[`a`] = player.stats?.ast || 0
 				p[`f`] = player.stats?.pf || 0
+
+				p['image'] = `${hardcodedDirectory}/${player.name}.jpg`
 
 				// json export
 				v[`${variableName}_${groupName}_p${i + 1}_data`] = p
